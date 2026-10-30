@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的小天地｜個人自我介紹</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&display=swap');
+    :root{--cream:#fffaf5;--ink:#4b4a43;--pink:#f4a7b9;--pink-soft:#fdeaf0;--yellow:#f9dc8a;--mint:#b9decf;--card:#fff;--line:#eee5dc}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Noto Sans TC','DM Sans',sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.reveal{opacity:0;transform:translateY(24px);transition:.8s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
+    .nav{position:fixed;z-index:20;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));height:62px;padding:0 18px 0 22px;border:1px solid rgba(255,255,255,.75);border-radius:999px;background:rgba(255,250,245,.78);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 30px rgba(139,112,91,.08)}
+    .brand{font-weight:700;letter-spacing:.02em}.brand span{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:7px;border-radius:50%;background:var(--yellow);transform:rotate(-8deg)}
+    .links{display:flex;gap:6px}.links a{padding:10px 13px;border-radius:999px;font-size:14px;font-weight:600}.links a:hover{background:var(--pink-soft)}
+    .menu{display:none;border:0;background:transparent;font-size:22px}
+    .hero{min-height:760px;display:grid;align-items:center;padding:120px 0 70px;position:relative}.hero:before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:var(--pink-soft);right:-120px;top:-100px;z-index:-1}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px}.eyebrow:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--mint)}
+    h1{font-size:clamp(48px,7vw,82px);line-height:1.02;margin:20px 0;color:#403f39;letter-spacing:-.04em}.hello{color:#d9829b}.hero-copy{max-width:560px;font-size:19px;line-height:1.9;color:#77766d}.actions{display:flex;gap:12px;margin-top:28px}.btn{padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid var(--line)}.btn.primary{background:var(--ink);color:white;box-shadow:0 10px 24px rgba(75,74,67,.16)}.btn:hover{transform:translateY(-2px)}
+    .portrait{position:relative;min-height:520px}.blob{position:absolute;inset:30px 0 0 20px;border-radius:44% 56% 62% 38% / 52% 42% 58% 48%;background:var(--mint);transform:rotate(3deg)}.portrait img{position:absolute;width:88%;height:470px;object-fit:cover;object-position:center;right:0;bottom:0;border-radius:44% 44% 36% 36%;border:9px solid white;box-shadow:0 24px 60px rgba(104,91,75,.18)}
+    .sticker{position:absolute;z-index:2;right:-18px;top:55px;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-size:36px;transform:rotate(12deg);box-shadow:0 12px 25px rgba(120,100,60,.12)}
+    section{padding:90px 0}.section-head{text-align:center;margin-bottom:38px}.section-head .tag{color:#c87d92;font-weight:700;font-size:14px}.section-head h2{font-size:clamp(34px,5vw,52px);margin:9px 0}.section-head p{color:#89877d;margin:0}
+    .about{background:white}.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.about-card{padding:28px;border-radius:28px;background:var(--cream);border:1px solid var(--line)}.about-card:nth-child(2){background:var(--pink-soft)}.about-card:nth-child(3){background:#edf7f2}.icon{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;background:#fff;font-size:24px;box-shadow:0 8px 18px rgba(90,75,60,.07)}.about-card h3{margin:18px 0 10px}.about-card p{line-height:1.85;color:#77766d;margin:0}
+    .timeline{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}.soft-box{background:var(--yellow);border-radius:40px;padding:38px;min-height:360px;position:relative}.soft-box:after{content:'✿';position:absolute;right:28px;bottom:20px;font-size:74px;color:rgba(255,255,255,.65)}.soft-box h3{font-size:34px;line-height:1.3;margin:0 0 18px}.soft-box p{line-height:1.9}.steps{display:grid;gap:14px}.step{padding:20px 22px;border:1px solid var(--line);border-radius:22px;background:white}.step strong{color:#cf7d94}.step p{line-height:1.75;margin:7px 0 0;color:#77766d}
+    .interests-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.interest{min-height:230px;border-radius:28px;padding:24px;position:relative;overflow:hidden;border:1px solid rgba(120,100,80,.06)}.interest:nth-child(1){background:#f9dfe7}.interest:nth-child(2){background:#dceee6}.interest:nth-child(3){background:#f7e9bd}.interest:nth-child(4){background:#e6e0f5}.interest b{font-size:34px}.interest h3{margin:70px 0 7px;font-size:21px}.interest p{font-size:14px;line-height:1.6;margin:0;color:#77766d}
+    .future{padding-bottom:120px}.future-card{border-radius:36px;padding:48px;background:var(--ink);color:white;text-align:center;position:relative;overflow:hidden}.future-card:before,.future-card:after{content:'✦';position:absolute;color:var(--yellow);font-size:28px}.future-card:before{left:45px;top:38px}.future-card:after{right:52px;bottom:35px}.future-card h2{font-size:clamp(32px,5vw,48px);margin:0 0 16px}.future-card p{max-width:690px;margin:auto;line-height:1.9;color:#e6e4dc}
+    footer{border-top:1px solid var(--line);padding:28px 0}.foot{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#89877d}
+    @media(max-width:800px){.wrap{width:min(100% - 28px,1120px)}.nav{height:58px}.links{display:none;position:absolute;top:66px;right:0;flex-direction:column;width:180px;padding:8px;border-radius:20px;background:white;border:1px solid var(--line);box-shadow:0 14px 30px rgba(80,70,60,.12)}.links.open{display:flex}.menu{display:block}.hero{padding-top:105px}.hero-grid,.timeline{grid-template-columns:1fr}.hero-copy{font-size:17px}.portrait{min-height:430px}.portrait img{height:390px;width:92%;}.sticker{right:0}.about-grid{grid-template-columns:1fr}.interests-grid{grid-template-columns:repeat(2,1fr)}section{padding:70px 0}.soft-box{min-height:300px}.foot{gap:12px;flex-direction:column;text-align:center}}
+    @media(max-width:440px){.hero-grid{gap:20px}.actions{flex-wrap:wrap}.portrait{min-height:360px}.portrait img{height:330px}.interests-grid{grid-template-columns:1fr}.future-card{padding:40px 22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <!-- 導覽列：簡潔的膠囊造型，讓各區塊可以快速跳轉 -->
+  <nav class="nav" aria-label="主要導覽"><a class="brand" href="#top"><span>✿</span>My Little World</a><div class="links" id="links"><a href="#about">關於我</a><a href="#study">學習</a><a href="#interest">興趣</a><a href="#future">未來</a></div><button class="menu" aria-label="展開選單" aria-controls="links">☰</button></nav>
+  <main id="top">
+    <!-- 首屏：以照片與暖色圓形背景營造清新可愛感 -->
+    <header class="hero"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">喜歡探索世界的一位醫學生</div><h1><span class="hello">大家好，</span><br>我是 Anna！</h1><p class="hero-copy">來自臺灣，目前就讀醫學系。保有一顆好奇心，在學習、服務、藝術與生活之間尋找自己的節奏。</p><div class="actions"><a class="btn primary" href="#about">認識更多 ↓</a><a class="btn" href="#interest">看看我的興趣</a></div></div><div class="portrait reveal"><div class="blob"></div><img src="website github/20260714_075201.jpg" alt="Anna 與毛絞玩偶的生活照片"><div class="sticker">♡</div></div></div></header>
+    <!-- 關於我：三張卡片整理個性、學習與服務 -->
+    <section class="about" id="about"><div class="wrap"><div class="section-head reveal"><span class="tag">ABOUT ME</span><h2>關於我</h2><p>用好奇心理解世界，用同理心看見每個人。</p></div><div class="about-grid"><article class="about-card reveal"><div class="icon">🌱</div><h3>好奇與探索</h3><p>我對醫學與生命科學充滿熱情，也喜歡結合不同領域，從新角度理解問題。</p></article><article class="about-card reveal"><div class="icon">💗</div><h3>溫暖的服務</h3><p>相信醫學的力量來自人與人的連結，課堂之外也投入校園、社團與志工服務。</p></article><article class="about-card reveal"><div class="icon">📚</div><h3>有方法地學習</h3><p>善用圖像筆記、Anki 等工具，並持續尋找兼顧美好與效率的學習方式。</p></article></div></div></section>
+    <!-- 學習歷程：把醫學背景與跨領域興趣排成時間線 -->
+    <section id="study"><div class="wrap"><div class="section-head reveal"><span class="tag">MY LEARNING</span><h2>學習的旅程</h2><p>從醫學專業出發，保留跨領域的想像力。</p></div><div class="timeline"><div class="soft-box reveal"><h3>Medical<br>Student</h3><p>高中畢業後進入醫學系，逐步學習人體、疾病與臨床思維，也學習如何成為能傾聽與陪伴的人。</p></div><div class="steps reveal"><div class="step"><strong>01 · 醫學與科學</strong><p>關注人體大體、解剖學、醫學生物化學，以及醫療資料的臨床應用。</p></div><div class="step"><strong>02 · 心理與人文</strong><p>對心理學、醫療倫理與法律議題都有興趣，也希望理解每位病人背後的故事。</p></div><div class="step"><strong>03 · 閱讀與紀錄</strong><p>以圖像筆記、復習卡與 Python 練習整理知識、發現規律並改善生活。</p></div></div></div></div></section>
+    <!-- 興趣：四張色彩卡片呈現生活樣貌 -->
+    <section class="about" id="interest"><div class="wrap"><div class="section-head reveal"><span class="tag">LITTLE JOYS</span><h2>我的日常興趣</h2><p>學習之外，也要好好保留生活的色彩。</p></div><div class="interests-grid"><article class="interest reveal"><b>📷</b><h3>攝影</h3><p>喜歡用 Nikon、Canon 相機紀錄光影與生活瞬間。</p></article><article class="interest reveal"><b>🎞️</b><h3>電影</h3><p>喜歡有溫度的故事，也期待自己未來能拍出感人的作品。</p></article><article class="interest reveal"><b>🌿</b><h3>園藝</h3><p>在忙碌之外種植植物，享受照顧與成長的過程。</p></article><article class="interest reveal"><b>🎵</b><h3>音樂</h3><p>音樂能讓我慢下來，也最適合陪伴長久的學習時光。</p></article></div></div></section>
+    <!-- 未來：簡短但有溫度的結語 -->
+    <section class="future" id="future"><div class="wrap"><div class="future-card reveal"><h2>未來，我想繼續成為一個<br>溫暖而堅定的人 ✨</h2><p>我期待學習 Python 與基礎程式開發，把科技與醫學結合；也會持續探索醫療、心理、藝術與人類故事。願我能走在自己的節奏裡，成為連結知識、技術與人心的橋梁。</p></div></div></section>
+  </main>
+  <footer><div class="wrap foot"><span>© 2026 My Little World</span><span>Made with curiosity & kindness ♡</span></div></footer>
+  <script>
+    // 捲動進入畫面時顯示淡入效果，尊重使用者的動畫偏好
+    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    // 手機版漢堡選單開合
+    const menu=document.querySelector('.menu'),links=document.querySelector('.links');menu.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  </script>
+</body>
+</html>
